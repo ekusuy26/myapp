@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
-from .models import UserInfo, Image
+from .models import UserInfo
 
 User = get_user_model()
 
@@ -32,13 +32,10 @@ class RegistForm(UserCreationForm):
 
     def save(self, post):
         user = super().save()
-        image = Image()
-        image.id = user.id
-        image.origin = self.cleaned_data['image']
-        image.save()
         info = UserInfo()
+        info.origin = self.cleaned_data['image']
         info.id = user.id
-        info.image = image
+        info.user_id = user.id
         info.name = post['username']
         info.self_introduction = post['self_introduction']
         info.save()

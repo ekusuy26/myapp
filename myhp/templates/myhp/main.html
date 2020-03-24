@@ -10,9 +10,9 @@
     <header>へっだ
       <div class="user">
         {% if user.is_authenticated %}
+        <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
         <ul>
           <li><a class="nav-link">ユーザ名：{{ user.username }}</a></li>
-          <li><img src="/media/{{ user.userinfo.origin }}"/></li>
           <li>
             <a class="nav-link" href="{% url 'match:logout' %}">
             <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
@@ -22,30 +22,31 @@
       </div>
     </header>
       <div class ="contents">
-        <div class ="side">投稿された画像
-          <div class ="photo-box">
-            <div class ="photo">しゃしん</div>
-            <div class ="photo">しゃしん</div>
-            <div class ="photo">しゃしん</div>
+        <div class ="side">
+          <div class = "comment">ユーザー一覧</div>
+          <!-- <div class ="photo-box"> -->
+            {% block content %}
+            <!-- content -->
+            {% endblock %}
+          <!-- </div> -->
+        </div>
+        <div class ="main">画像合成フォーム
+          <div class ="upper-box">
+            <input class="parents" type="file" name="image1">
+            {% if user.is_authenticated %}
+            <img src="/media/{{ user.userinfo.origin }}"/>
+            {% endif %}
           </div>
+          <div class ="under-box">image3</div>
         </div>
-      <div class ="main">画像合成フォーム
-        <div class ="upper-box">
-          <input class="parents" type="file" name="image1">
-          {% if user.is_authenticated %}
-          <img src="/media/{{ user.userinfo.origin }}"/>
-          {% endif %}
-        </div>
-        <div class ="under-box">image3</div>
-      </div>
-      <div class ="messages">チャットフォーム
-        <div class ="group">グループ情報</div>
-        <div class ="message">
-          <div class="their_message">相手のメッセージ</div>
-          <div class="my_message">自分のメッセージ</div>
-        </div>
-        <div class ="form"></div>
-      </div>
+        <!-- <div class ="messages">チャットフォーム
+          <div class ="group">グループ情報</div>
+          <div class ="message">
+            <div class="their_message">相手のメッセージ</div>
+            <div class="my_message">自分のメッセージ</div>
+          </div>
+          <div class ="form"></div>
+        </div> -->
       </div>
   </body>
 </html>

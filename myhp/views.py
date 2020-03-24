@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from match.models import Image
+from match.models import UserInfo
 
 
 def top(request):

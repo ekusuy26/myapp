@@ -8,20 +8,18 @@
   </head>
   <body>
     <header>へっだ
-      <ul class="user">
+      <div class="user">
         {% if user.is_authenticated %}
-        <li>
-          <a class="nav-link">ユーザ名：{{ user.username }}</a>
-        </li>
-        <li>
-          <a class="nav-link">しゃしん：{{ user.userinfo.origin }}</a>
-        </li>
-        <li>
-          <a class="nav-link">
-              <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
-        </li>
+        <ul>
+          <li><a class="nav-link">ユーザ名：{{ user.username }}</a></li>
+          <li><img src="/media/{{ user.userinfo.origin }}"/></li>
+          <li>
+            <a class="nav-link" href="{% url 'match:logout' %}">
+            <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
+          </li>
+        </ul>
         {% endif %}
-      </ul>
+      </div>
     </header>
       <div class ="contents">
         <div class ="side">投稿された画像
@@ -34,7 +32,9 @@
       <div class ="main">画像合成フォーム
         <div class ="upper-box">
           <input class="parents" type="file" name="image1">
-          <input class="parents" type="file" name="image2">
+          {% if user.is_authenticated %}
+          <img src="/media/{{ user.userinfo.origin }}"/>
+          {% endif %}
         </div>
         <div class ="under-box">image3</div>
       </div>

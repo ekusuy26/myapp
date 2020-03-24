@@ -1,0 +1,103 @@
+body {
+  background-color: #f0f0f0;
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+header{
+  height: 100px;
+  background-color: #8EB8FF;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.user{
+  height: 50px;
+  width: 200px;
+  border: solid 1px;
+  float: right;
+  margin-top: 30px;
+}
+
+.contents{
+  height: 100%;
+  display: flex;
+  margin-top: 100px;
+}
+
+.side{
+  height: 100%;
+  width: 400px;
+  background-color: #BAD3FF;
+}
+
+.photo-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.photo{
+  height: 100px;
+  width: 100px;
+  border: solid 1px;
+}
+
+.messages{
+  height: 100%;
+  width: 300px;
+  background-color: #D9E5FF;
+}
+
+.group{
+  height: 50px;
+  border: solid 1px;
+}
+
+.message{
+  width: 300px;
+  height: 80px;
+  height: calc(100% - 150px);
+}
+
+.their_message{
+  margin: 10px;
+}
+.my_message{
+  float: right;
+  margin: 10px;
+}
+
+.form{
+  border: solid 1px;
+  height: 100px;
+}
+
+.main{
+  height: 100%;
+  width: calc(100% - 700px);
+  margin-left: 5px;
+}
+
+.upper-box{
+  display: flex;
+  justify-content: space-around;
+}
+
+.parents{
+  height: 200px;
+  width: 200px;
+  border: solid 1px;
+}
+
+.under-box{
+  height: 200px;
+  width: 200px;
+  border: solid 1px;
+  margin: 150px auto;
+}

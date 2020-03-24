@@ -1,0 +1,51 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/myhp.css' %}">
+    <title>個人アプリ</title>
+  </head>
+  <body>
+    <header>へっだ
+      <ul class="user">
+        {% if user.is_authenticated %}
+        <li>
+          <a class="nav-link">ユーザ名：{{ user.username }}</a>
+        </li>
+        <li>
+          <a class="nav-link">しゃしん：{{ userinfo.image.origin }}</a>
+        </li>
+        <li>
+          <a class="nav-link">
+              <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
+        </li>
+        {% endif %}
+      </ul>
+    </header>
+      <div class ="contents">
+        <div class ="side">投稿された画像
+          <div class ="photo-box">
+            <div class ="photo">しゃしん</div>
+            <div class ="photo">しゃしん</div>
+            <div class ="photo">しゃしん</div>
+          </div>
+        </div>
+      <div class ="main">画像合成フォーム
+        <div class ="upper-box">
+          <input class="parents" type="file" name="image1">
+          <input class="parents" type="file" name="image2">
+        </div>
+        <div class ="under-box">image3</div>
+      </div>
+      <div class ="messages">チャットフォーム
+        <div class ="group">グループ情報</div>
+        <div class ="message">
+          <div class="their_message">相手のメッセージ</div>
+          <div class="my_message">自分のメッセージ</div>
+        </div>
+        <div class ="form"></div>
+      </div>
+      </div>
+  </body>
+</html>

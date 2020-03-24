@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
-
+from ..models import UserInfo
 from ..forms import LoginForm
 
 # Create your views here.

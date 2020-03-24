@@ -1,0 +1,8 @@
+{% extends './main.html' %}
+{% block content %}
+{% for image in images %}
+<a href="{% url 'match:logout' %}">
+<img src="{{ image.origin.url }}" class="photo"/>
+</a>
+{% endfor%}
+{% endblock content %}

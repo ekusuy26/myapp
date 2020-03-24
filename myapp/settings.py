@@ -133,6 +133,6 @@ STATICFILES_DIRS = [
 ]
 SITE_ID = 1
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/myhp/top/'
+LOGIN_REDIRECT_URL = '/myhp/index'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

@@ -18,11 +18,30 @@ header{
 }
 
 .user{
-  height: 50px;
-  width: 200px;
+  height: 55px;
+  width: 250px;
   border: solid 1px;
   float: right;
   margin-top: 30px;
+  display: flex;
+  display: table;
+}
+
+ul{
+  list-style: none;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.nav-link{
+  text-decoration: none;
+}
+
+.user_photo{
+  height: 100%;
+  width: 50px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .contents{
@@ -33,8 +52,9 @@ header{
 
 .side{
   height: 100%;
-  width: 400px;
+  width: 900px;
   background-color: #BAD3FF;
+  text-align: center;
 }
 
 .photo-box{
@@ -80,7 +100,7 @@ header{
 
 .main{
   height: 100%;
-  width: calc(100% - 700px);
+  width: 100%;
   margin-left: 5px;
 }
 

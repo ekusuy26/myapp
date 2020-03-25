@@ -3,6 +3,9 @@
 {% for image in images %}
 <a href="{% url 'myhp:show' %}">
 <img src="{{ image.origin.url }}" class="photo"/>
+<div>{{ image.origin }}</div>
+<div>{{ image.id }}</div>
+<div>{{ image.self_introduction }}</div>
 </a>
 {% endfor%}
 {% endblock user_list %}

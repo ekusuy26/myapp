@@ -7,5 +7,4 @@ urlpatterns = [
     path('top/', views.top, name='top'),
     path('index/', views.index, name='index'),
     path('show/', views.show, name='show'),
-
 ]

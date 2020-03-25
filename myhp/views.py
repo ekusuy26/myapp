@@ -9,3 +9,6 @@ def top(request):
 def index(request):
     images = UserInfo.objects.all()
     return render(request, 'myhp/index.html', {'images': images})
+
+def show(request):
+    return render(request, 'myhp/show.html', {})

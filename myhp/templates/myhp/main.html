@@ -25,19 +25,15 @@
         <div class ="side">
           <div class = "comment">ユーザー一覧</div>
           <!-- <div class ="photo-box"> -->
-            {% block content %}
+            {% block user_list %}
             <!-- content -->
             {% endblock %}
           <!-- </div> -->
         </div>
-        <div class ="main">画像合成フォーム
-          <div class ="upper-box">
-            <input class="parents" type="file" name="image1">
-            {% if user.is_authenticated %}
-            <img src="/media/{{ user.userinfo.origin }}"/>
-            {% endif %}
-          </div>
-          <div class ="under-box">image3</div>
+        <div class ="main">
+          {% block synthetic_form %}
+          <!-- content -->
+          {% endblock %}
         </div>
         <!-- <div class ="messages">チャットフォーム
           <div class ="group">グループ情報</div>

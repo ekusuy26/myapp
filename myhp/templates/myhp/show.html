@@ -1,0 +1,12 @@
+{% extends './main.html' %}
+{% block synthetic_form %}
+<div class ="main">画像合成フォーム
+  <div class ="upper-box">
+    <input class="parents" type="file" name="image1">
+    {% if user.is_authenticated %}
+    <img src="/media/{{ user.userinfo.origin }}"/>
+    {% endif %}
+  </div>
+  <div class ="under-box">image3</div>
+</div>
+{% endblock synthetic_form %}

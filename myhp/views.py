@@ -12,3 +12,4 @@ def index(request):
 
 def show(request):
     return render(request, 'myhp/show.html', {})
+    

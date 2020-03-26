@@ -11,6 +11,6 @@ def index(request):
     return render(request, 'myhp/index.html', {'images': images})
 
 def show(request):
-    aaa = UserInfo.id
+    aaa = 3
     images = UserInfo.objects.get(pk=aaa)
     return render(request, 'myhp/show.html', {'images': images})

@@ -9,7 +9,11 @@ h1,h2,h3,h4,h5,h6,p {
   margin: 0;
 }
 
-header{
+.wrapper{
+  background-image: url("backimage.png");
+}
+
+.header{
   height: 100px;
   background-color: #8EB8FF;
   position: fixed;
@@ -45,29 +49,33 @@ ul{
 }
 
 .contents{
-  height: 100%;
-  display: flex;
   margin-top: 100px;
 }
 
-.side{
-  height: 100%;
-  width: 900px;
-  background-color: #BAD3FF;
-  text-align: center;
+.main{
+  width: 800px;
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 100px auto;
 }
 
-.photo-box{
+.photo_box{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .photo{
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border: solid 1px;
 }
 
+.link{
+  width: 400px;
+  display: flex;
+  text-decoration: none;
+  color: #000000;
+}
 .messages{
   height: 100%;
   width: 300px;
@@ -98,15 +106,10 @@ ul{
   height: 100px;
 }
 
-.main{
-  height: 100%;
-  width: 100%;
-  margin-left: 5px;
-}
-
 .upper-box{
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .parents{

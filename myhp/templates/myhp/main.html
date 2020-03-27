@@ -4,11 +4,13 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/myhp.css' %}">
+    <script type="text/javascript" src="{% static 'js/create.js' %}"></script>
     <title>個人アプリ</title>
   </head>
   <body>
     <div class="wrapper">
-      <div class="header">へっだ
+      <div class="header">
+        <img src="/myhp/static/css/logo.png" class="logo">
         <div class="user">
           {% if user.is_authenticated %}
           <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
@@ -16,12 +18,12 @@
             <li><a class="nav-link">ユーザ名：{{ user.username }}</a></li>
             <li>
               <a class="nav-link" href="{% url 'match:logout' %}">
-              <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
-            </li>
-          </ul>
-          {% endif %}
+                <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
+              </li>
+            </ul>
+            {% endif %}
+          </div>
         </div>
-      </div>
         <!-- <div class ="contents"> -->
           {% block user_list %}
           <!-- content -->
@@ -40,7 +42,7 @@
             </div>
             <div class ="form"></div>
           </div> -->
-        <!-- </div> -->
-        </div>
+          <!-- </div> -->
+    </div>
   </body>
 </html>

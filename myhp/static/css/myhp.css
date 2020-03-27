@@ -15,10 +15,18 @@ h1,h2,h3,h4,h5,h6,p {
 
 .header{
   height: 100px;
-  background-color: #8EB8FF;
+  /* background-color: #8EB8FF; */
   position: fixed;
   top: 0px;
   width: 100%;
+  /* background-image: url("header.png"); */
+  display: flex;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+  background-image: url("logo.png");
 }
 
 .user{
@@ -27,7 +35,6 @@ h1,h2,h3,h4,h5,h6,p {
   border: solid 1px;
   float: right;
   margin-top: 30px;
-  display: flex;
   display: table;
 }
 

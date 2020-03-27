@@ -2,13 +2,10 @@ from PIL import Image
 from django.shortcuts import render
 from match.models import UserInfo
 import cv2
-import matplotlib.pyplot as plt
-import numpy as np
 
 
 def top(request):
     return render(request, 'myhp/main.html', {})
-
 
 def index(request):
     images = UserInfo.objects.all()
@@ -19,28 +16,16 @@ def show(request):
     images = UserInfo.objects.get(pk=aaa)
     return render(request, 'myhp/show.html', {'images': images})
 
-# def mosaic(request):
-    # src = cv2.imread('./media/photos/20/03/24/download.jpg')
-    # small = cv2.resize(src, None, fx=0.1, fy=0.1, interpolation=cv2.INTER_NEAREST)
-    # img = cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
-
-    # cv2.imwrite('./media/photos/opencv_mosaic_01.jpg', img)
-    # return render(request, 'myhp/create.html', {})
-
-# def test(request):
-# class MosaicForm():
-
 def create(request):
     return render(request, 'myhp/create.html', {})
 
-src = cv2.imread('./media/photos/20/03/24/images.jpg')
+src = cv2.imread('./media/photos/20/03/27/image9.jpg')
  
 def mosaic(src, ratio=0.1):
     small = cv2.resize(src, None, fx=ratio, fy=ratio, interpolation=cv2.INTER_NEAREST)
     return cv2.resize(small, src.shape[:2][::-1], interpolation=cv2.INTER_NEAREST)
 
 dst_01 = mosaic(src)
-# cv2.imwrite('./media/photos/opencv_mosaic_01.jpg', dst_01)
 
 def mosaic_area(src, x, y, width, height, ratio=0.1):
     dst = src.copy()
@@ -48,7 +33,6 @@ def mosaic_area(src, x, y, width, height, ratio=0.1):
     return dst
 
 dst_area = mosaic_area(src, 100, 50, 100, 150)
-# cv2.imwrite('./media/photos/opencv_mosaic_area.jpg', dst_area)
 
 face_cascade_path = './haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(face_cascade_path)
@@ -61,3 +45,13 @@ for x, y, w, h in faces:
     dst_face = mosaic_area(src, x, y, w, h)
 
 cv2.imwrite('./media/photos/opencv_mosaic_face.jpg', dst_face)
+
+
+
+src = cv2.cvtColor(cv2.imread('./media/photos/20/03/27/image9.jpg'), cv2.COLOR_BGR2RGB)
+
+imgs = [Image.fromarray(mosaic(src, 1 / i)) for i in range(1, 25)]
+imgs += imgs[-2::-1] + [Image.fromarray(src)] * 5
+
+imgs[0].save('./media/photos/opencv_mosaic.gif',
+             save_all=True, append_images=imgs[1:], optimize=False, duration=50, loop=0)

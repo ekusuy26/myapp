@@ -4,27 +4,28 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/myhp.css' %}">
-    <script type="text/javascript" src="{% static 'js/create.js' %}"></script>
     <title>個人アプリ</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="header">
-        <img src="/myhp/static/css/logo.png" class="logo">
+        <a class="nav-link" href="{% url 'myhp:index' %}">
+          <div class="logo"></div>
+        </a>
         <div class="user">
           {% if user.is_authenticated %}
           <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
           <ul>
-            <li><a class="nav-link">ユーザ名：{{ user.username }}</a></li>
+            <li><a class="nav-link">USER：{{ user.username }}</a></li>
             <li>
               <a class="nav-link" href="{% url 'match:logout' %}">
-                <i class="fa fa-fw fa-sign-out"></i>ログアウト</a>
-              </li>
-            </ul>
-            {% endif %}
-          </div>
+                <i class="fas fa-sign-out-alt"></i>ログアウト</a>
+            </li>
+          </ul>
+          {% endif %}
         </div>
-        <!-- <div class ="contents"> -->
+      </div>
+      <div class="main">
           {% block user_list %}
           <!-- content -->
           {% endblock %}
@@ -34,15 +35,16 @@
           {% block create_form %}
           <!-- content -->
           {% endblock %}
-          <!-- <div class ="messages">チャットフォーム
-            <div class ="group">グループ情報</div>
-            <div class ="message">
-              <div class="their_message">相手のメッセージ</div>
-              <div class="my_message">自分のメッセージ</div>
-            </div>
-            <div class ="form"></div>
-          </div> -->
-          <!-- </div> -->
+      </div>
+        <!-- <div class ="messages">チャットフォーム
+          <div class ="group">グループ情報</div>
+          <div class ="message">
+            <div class="their_message">相手のメッセージ</div>
+            <div class="my_message">自分のメッセージ</div>
+          </div>
+          <div class ="form"></div>
+        </div> -->
+        <!-- </div> -->
     </div>
   </body>
 </html>

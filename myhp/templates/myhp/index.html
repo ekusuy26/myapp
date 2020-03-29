@@ -1,19 +1,8 @@
 {% extends './main.html' %}
 {% block user_list %}
-
-
-<div class ="main">
-  <div class = "comment">ユーザー一覧</div>
   {% for image in images %}
-    <div class = "photo_box">
-      <a href="{% url 'myhp:show' %}" class="link">
-        <img src="{{ image.origin.url }}" class="photo"/>
-        <div class = "info_box">
-          <div>NAME：{{ image.name }}</div>
-          <div>INTRODUCTION：{{ image.self_introduction }}</div>
-        </div>
-      </a>
-    </div>
+  <a href="{% url 'myhp:show' id=image.id %}" class="link">
+      <img src="{{ image.origin.url }}" class="photo" name="test"/>
+  </a>
   {% endfor%}
-</div>
 {% endblock user_list %}

@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   color: #333;
   margin: 0 auto;
+  font-family: "Montserrat","游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
 }
 h1,h2,h3,h4,h5,h6,p {
   padding: 10px 0;
@@ -15,27 +16,28 @@ h1,h2,h3,h4,h5,h6,p {
 
 .header{
   height: 100px;
-  /* background-color: #8EB8FF; */
   position: fixed;
   top: 0px;
   width: 100%;
-  /* background-image: url("header.png"); */
+  background-image: url("header.png");
   display: flex;
+  justify-content: space-between;
 }
 
 .logo{
   height: 100px;
-  width: 100px;
-  background-image: url("logo.png");
+  width: 250px;
+  background-image: url("image.png");
+  background-size: cover;
+  margin-left: 50px;
 }
 
 .user{
-  height: 55px;
-  width: 250px;
-  border: solid 1px;
-  float: right;
-  margin-top: 30px;
+  height: 100px;
+  width: 400px;
+  margin: 0 50px 0 0;
   display: table;
+  font-size: 18px;
 }
 
 ul{
@@ -46,17 +48,26 @@ ul{
 
 .nav-link{
   text-decoration: none;
+  font-weight: bold;
 }
 
 .user_photo{
-  height: 100%;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   display: table-cell;
   vertical-align: middle;
+  border-radius: 100px;
+  margin-left: 50px;
 }
 
 .contents{
   margin-top: 100px;
+}
+
+
+.box{
+  display: flex;
+  margin: 100px auto;
 }
 
 .main{
@@ -64,25 +75,16 @@ ul{
   background-color: #ffffff;
   margin: 100px auto;
   padding: 100px auto;
-}
-
-.photo_box{
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  text-align: center;
 }
 
 .photo{
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border: solid 1px;
 }
 
-.link{
-  width: 400px;
-  display: flex;
-  text-decoration: none;
-  color: #000000;
-}
 .messages{
   height: 100%;
   width: 300px;
@@ -117,6 +119,12 @@ ul{
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  padding-top: 200px;
+}
+
+.lower-box{
+  height: 300px;
+  padding-top: 150px;
 }
 
 .parents{
@@ -125,9 +133,15 @@ ul{
   border: solid 1px;
 }
 
-.under-box{
-  height: 200px;
-  width: 200px;
-  border: solid 1px;
-  margin: 150px auto;
+.fadeout {
+  animation : fadeOut 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

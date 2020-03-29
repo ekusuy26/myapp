@@ -1,17 +1,14 @@
 {% extends './main.html' %}
 {% block synthetic_form %}
-
-
-<div class ="main">画像合成フォーム
-  <div class ="upper-box">
-    <img src="{{ images.origin.url }}"/>
-    {% if user.is_authenticated %}
-    <img src="/media/{{ user.userinfo.origin }}"/>
-    {% endif %}
-  </div>
+<div class ="upper-box">
+  <img src="{{ images.origin.url }}"/>
+  {% if user.is_authenticated %}
+  <img src="/media/{{ user.userinfo.origin }}"/>
+  {% endif %}
+</div>
+<div class ="lower-box">
   <form action="create" method="get">
-    <input type="file" src="button.gif" alt="送信する">
-    <input type="submit" value="送信">
+    <input type="submit" value="mosaic" style="width:100px; font-size: 500px;">
   </form>
 </div>
 {% endblock synthetic_form %}

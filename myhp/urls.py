@@ -6,7 +6,6 @@ app_name='myhp'
 urlpatterns = [
     path('top/', views.top, name='top'),
     path('index/', views.index, name='index'),
-    # path('show/create/', views.mosaic, name='mosaic'),
     path('show/create/', views.create, name='create'),
-    path('show/', views.show, name='show'),
+    path('show/<int:id>', views.show, name='show'),
 ]

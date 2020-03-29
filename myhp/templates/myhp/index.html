@@ -2,7 +2,7 @@
 {% block user_list %}
   {% for image in images %}
   <a href="{% url 'myhp:show' id=image.id %}" class="link">
-      <img src="{{ image.origin.url }}" class="photo" name="test"/>
+    <img src="{{ image.origin.url }}" class="photo" title="{{image.name}}"/>
   </a>
   {% endfor%}
 {% endblock user_list %}

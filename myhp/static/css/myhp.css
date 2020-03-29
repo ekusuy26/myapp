@@ -76,7 +76,6 @@ ul{
   margin: 100px auto;
   padding: 100px auto;
   text-align: center;
-  text-align: center;
 }
 
 .photo{
@@ -85,34 +84,32 @@ ul{
   border: solid 1px;
 }
 
-.messages{
-  height: 100%;
+.message-box{
+  display: flex;
+}
+
+.left-box{
   width: 300px;
-  background-color: #D9E5FF;
+  height: 100vh;
+  background-color: #dddddd;
 }
 
-.group{
-  height: 50px;
-  border: solid 1px;
+.right-box{
+  width: 500px;
+  height: 100vh;
+  position: relative;
 }
 
-.message{
-  width: 300px;
-  height: 80px;
-  height: calc(100% - 150px);
+.message-main{
+
 }
 
-.their_message{
-  margin: 10px;
-}
-.my_message{
-  float: right;
-  margin: 10px;
-}
-
-.form{
-  border: solid 1px;
+.message-form{
   height: 100px;
+  width: 100%;
+  background-color: #f0f0f0;
+  position: absolute;
+  bottom: 0;
 }
 
 .upper-box{
@@ -131,17 +128,4 @@ ul{
   height: 200px;
   width: 200px;
   border: solid 1px;
-}
-
-.fadeout {
-  animation : fadeOut 1s;
-  animation-fill-mode: both;
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

@@ -18,6 +18,9 @@ def show(request,id):
 def create(request):
     return render(request, 'myhp/create.html', {})
 
+def message(request):
+    return render(request, 'myhp/message.html', {})
+
 # class MosaicProcess(View):
 #     template_name = "myhp/create.html"
     

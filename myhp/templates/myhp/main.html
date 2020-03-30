@@ -15,7 +15,9 @@
         </a>
         <div class="user">
           {% if user.is_authenticated %}
-          <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
+          <a href="#">
+            <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
+          </a>
           <div class="user-box">
             <a class="nav-link-user">USERNAME：{{ user.username }}</a>
             <ul>

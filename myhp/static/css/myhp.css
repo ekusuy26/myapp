@@ -33,23 +33,41 @@ h1,h2,h3,h4,h5,h6,p {
   margin-left: 50px;
 }
 
+.user-box{
+  text-align: center;
+  margin-top: 10px;
+}
+
 .user{
-  height: 100px;
-  width: 400px;
   margin: 0 50px 0 0;
   display: table;
   font-size: 18px;
+  display: flex;
 }
 
 ul{
   list-style: none;
-  display: table-cell;
-  vertical-align: middle;
+  display: flex;
 }
 
 .nav-link{
   text-decoration: none;
   font-weight: bold;
+  margin-right: 30px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.nav-link-user{
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 30px;
+  text-decoration: none;
+  color: #333;
+}
+
+.fas{
+  font-size: 30px;
 }
 
 .user_photo{
@@ -87,6 +105,14 @@ ul{
   text-align: center;
 }
 
+.main-message{
+  width: 800px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 100px auto;
+  text-align: center;
+}
+
 .photo{
   height: 250px;
   width: 250px;
@@ -110,7 +136,8 @@ ul{
 }
 
 .message-main{
-
+  margin: 100px auto;
+  height: 100vh;
 }
 
 .message-form{
@@ -164,5 +191,5 @@ ul{
 }
 .mask2:hover .mask {
 	opacity:		1;	/* マスクを表示する */
-	padding-top:		20px;	/* ホバーで下にずらす */
+	padding-top:		30px;	/* ホバーで下にずらす */
 }

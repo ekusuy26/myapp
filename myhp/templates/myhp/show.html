@@ -2,9 +2,9 @@
 {% block synthetic_form %}
 <div class="main">
   <div class ="upper-box">
-    <img src="{{ images.origin.url }}"/>
+    <img src="{{ images.origin.url }}" style="height: 300px; width: 300px;"/>
     {% if user.is_authenticated %}
-    <img src="/media/{{ user.userinfo.origin }}"/>
+    <img src="/media/{{ user.userinfo.origin }}" style="height: 300px; width: 300px;"/>
     {% endif %}
   </div>
   <div class ="lower-box">

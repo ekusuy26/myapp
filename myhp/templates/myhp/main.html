@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/myhp.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <title>個人アプリ</title>
   </head>
   <body>
@@ -15,17 +16,19 @@
         <div class="user">
           {% if user.is_authenticated %}
           <img src="/media/{{ user.userinfo.origin }}" class="user_photo"/>
-          <ul>
-            <li><a class="nav-link">USER：{{ user.username }}</a></li>
-            <li>
-              <a class="nav-link" href="{% url 'match:logout' %}">
-                <i class="fas fa-sign-out-alt"></i>ログアウト</a>
-            </li>
-            <li>
-              <a class="nav-link" href="{% url 'myhp:message' %}">
-                <i class="fas fa-sign-out-alt"></i>message</a>
-            </li>
-          </ul>
+          <div class="user-box">
+            <a class="nav-link-user">USERNAME：{{ user.username }}</a>
+            <ul>
+              <li>
+                <a class="nav-link" href="{% url 'myhp:message' %}">
+                  <i class="fas fa-comments"></i>message</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{% url 'match:logout' %}">
+                  <i class="fas fa-sign-out-alt"></i>ログアウト</a>
+              </li>
+            </ul>
+          </div>
           {% endif %}
         </div>
       </div>

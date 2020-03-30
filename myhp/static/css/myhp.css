@@ -193,3 +193,14 @@ ul{
 	opacity:		1;	/* マスクを表示する */
 	padding-top:		30px;	/* ホバーで下にずらす */
 }
+
+.submit-btn{
+  display: none;
+}
+
+.message-text{
+  height: 70px;
+  width: 450px;
+  margin: 15px auto;
+  border-radius: 30px;
+}

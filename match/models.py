@@ -11,3 +11,10 @@ class UserInfo(models.Model):
     self_introduction = models.CharField(max_length=500)
     created_at = models.DateField(auto_now_add=True)
     objects = models.Manager
+    dog_name = models.CharField(max_length=100)
+    kind = models.CharField(max_length=100)
+    sex = models.CharField(max_length=100)
+    age = models.CharField(max_length=100)
+    character = models.CharField(max_length=100)
+    height = models.IntegerField
+    weight = models.IntegerField

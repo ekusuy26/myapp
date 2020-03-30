@@ -22,6 +22,7 @@ h1,h2,h3,h4,h5,h6,p {
   background-image: url("header.png");
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 
 .logo{
@@ -71,6 +72,14 @@ ul{
 }
 
 .main{
+  width: 800px;
+  background-color: #ffffff;
+  margin: 100px auto;
+  padding: 100px auto;
+  text-align: center;
+}
+
+.main-list{
   width: 800px;
   background-color: #ffffff;
   margin: 100px auto;
@@ -128,4 +137,32 @@ ul{
   height: 200px;
   width: 200px;
   border: solid 1px;
+}
+
+.mask2 {
+	width:			250px;
+	height:			250px;
+	overflow:		hidden;
+  position:		relative;
+  display: inline-block;
+}
+.mask2 .caption {
+	font-size:		16px;
+	text-align: 		center;
+	color:			#fff;
+}
+.mask2 .mask {
+	width:			100%;
+	height:			100%;
+	position:		absolute;
+	top:			0;
+	left:			0;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+	-webkit-transition:	all 0.6s ease;
+	transition:		all 0.6s ease;
+}
+.mask2:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+	padding-top:		20px;	/* ホバーで下にずらす */
 }

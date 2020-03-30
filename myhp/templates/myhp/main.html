@@ -21,33 +21,26 @@
               <a class="nav-link" href="{% url 'match:logout' %}">
                 <i class="fas fa-sign-out-alt"></i>ログアウト</a>
             </li>
+            <li>
+              <a class="nav-link" href="{% url 'myhp:message' %}">
+                <i class="fas fa-sign-out-alt"></i>message</a>
+            </li>
           </ul>
           {% endif %}
         </div>
       </div>
-      <div class="main">
-          {% block user_list %}
-          <!-- content -->
-          {% endblock %}
-          {% block synthetic_form %}
-          <!-- content -->
-          {% endblock %}
-          {% block create_form %}
-          <!-- content -->
-          {% endblock %}
-          {% block message_form %}
-          <!-- content -->
-          {% endblock %}
-      </div>
-        <!-- <div class ="messages">チャットフォーム
-          <div class ="group">グループ情報</div>
-          <div class ="message">
-            <div class="their_message">相手のメッセージ</div>
-            <div class="my_message">自分のメッセージ</div>
-          </div>
-          <div class ="form"></div>
-        </div> -->
-        <!-- </div> -->
+        {% block user_list %}
+        <!-- content -->
+        {% endblock %}
+        {% block synthetic_form %}
+        <!-- content -->
+        {% endblock %}
+        {% block create_form %}
+        <!-- content -->
+        {% endblock %}
+        {% block message_form %}
+        <!-- content -->
+        {% endblock %}
     </div>
   </body>
 </html>
